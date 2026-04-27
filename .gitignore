@@ -1,0 +1,15 @@
+node_modules/
+.next/
+.env.local
+.env
+*.log
+.DS_Store
+*.db
+*.db-shm
+*.db-wal
+__pycache__/
+*.pyc
+.venv/
+venv/
+storage/
+services/pipeline-api/app/api/resume_review_router.py

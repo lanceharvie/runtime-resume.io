@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body style="margin:0;padding:24px;font-family:Arial,sans-serif;background:#eff3ea;color:#132018;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;margin:0 auto;background:#fcfdf9;border:1px solid #d8e3d1;">
+      <tr>
+        <td style="padding:32px;">
+          <p style="margin:0 0 12px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#466448;">RunTime Resume</p>
+          <h1 style="margin:0 0 16px;font-size:28px;line-height:1.2;">{{ heading }}</h1>
+          <p style="margin:0 0 16px;font-size:16px;line-height:1.6;">Hi {{ candidate_name }}, we found a role that looks relevant based on your current preferences.</p>
+          <p style="margin:0 0 10px;font-size:16px;line-height:1.6;"><strong>{{ title }}</strong></p>
+          <p style="margin:0 0 10px;font-size:15px;line-height:1.6;">{{ company }}{% if location %} · {{ location }}{% endif %}</p>
+          {% if summary %}
+          <p style="margin:0 0 18px;font-size:15px;line-height:1.6;">{{ summary }}</p>
+          {% endif %}
+          <p style="margin:0;"><a href="{{ url }}" style="display:inline-block;padding:12px 18px;background:#20492d;color:#ffffff;text-decoration:none;">View role</a></p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

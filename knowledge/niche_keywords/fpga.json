@@ -1,0 +1,20 @@
+{
+  "niche": "fpga",
+  "priority_terms": [
+    "FPGA",
+    "VHDL",
+    "Verilog",
+    "SystemVerilog",
+    "Xilinx",
+    "Intel Quartus",
+    "Vivado",
+    "timing closure",
+    "simulation",
+    "verification",
+    "RTL",
+    "high-speed interfaces",
+    "PCIe",
+    "DDR",
+    "AXI"
+  ]
+}

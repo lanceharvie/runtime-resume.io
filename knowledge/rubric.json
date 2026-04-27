@@ -1,0 +1,56 @@
+{
+  "dimensions": [
+    {
+      "key": "ats_compatibility",
+      "weight": 0.2,
+      "checks": [
+        "heading_structure",
+        "date_consistency",
+        "parse_safety",
+        "keyword_surface_area",
+        "contact_info_clarity"
+      ]
+    },
+    {
+      "key": "technical_clarity",
+      "weight": 0.25,
+      "checks": [
+        "tool_specificity",
+        "system_context",
+        "protocol_specificity",
+        "scope_clarity",
+        "domain_language_quality"
+      ]
+    },
+    {
+      "key": "relevance_weighting",
+      "weight": 0.2,
+      "checks": [
+        "page_one_signal",
+        "target_role_alignment",
+        "ordering_of_relevant_experience",
+        "keyword_priority"
+      ]
+    },
+    {
+      "key": "career_narrative",
+      "weight": 0.2,
+      "checks": [
+        "progression_signal",
+        "transition_clarity",
+        "seniority_consistency",
+        "ownership_signal"
+      ]
+    },
+    {
+      "key": "format_readability",
+      "weight": 0.15,
+      "checks": [
+        "scan_speed",
+        "bullet_density",
+        "whitespace",
+        "section_hierarchy"
+      ]
+    }
+  ]
+}

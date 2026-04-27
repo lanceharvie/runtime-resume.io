@@ -1,0 +1,29 @@
+[
+  {
+    "job_id": "rr-local-001",
+    "title": "Senior Recruiter",
+    "company": "RunTime Recruitment",
+    "location": "Sydney",
+    "url": "https://runtimeresume.io/order",
+    "summary": "In-house recruiter role focused on delivery, stakeholder management, and talent acquisition.",
+    "role_type": "full-time"
+  },
+  {
+    "job_id": "rr-local-002",
+    "title": "Talent Acquisition Partner",
+    "company": "RunTime Recruitment",
+    "location": "Melbourne",
+    "url": "https://runtimeresume.io/order",
+    "summary": "Agency-side TA role for candidates targeting recruiter and sourcing workflows.",
+    "role_type": "contract"
+  },
+  {
+    "job_id": "rr-local-003",
+    "title": "Operations Manager",
+    "company": "RunTime Recruitment",
+    "location": "Remote Australia",
+    "url": "https://runtimeresume.io/order",
+    "summary": "Operations leadership role for candidates targeting process, delivery, and team management work.",
+    "role_type": "full-time"
+  }
+]

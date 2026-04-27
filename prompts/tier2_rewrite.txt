@@ -1,0 +1,44 @@
+Rewrite this resume using the rewrite strategy provided.
+
+Inputs:
+- order
+- intake
+- tier_1 audit
+- extracted_text
+- deterministic_draft
+
+Tasks:
+1. Strengthen page-one positioning for the candidate's target roles and market.
+2. Rewrite the summary using recruiter-credible engineering language.
+3. Rewrite or restructure the skills section for ATS readability and hiring-manager clarity.
+4. Rewrite each experience section for technical ownership, relevance, and signal strength.
+5. Keep every claim faithful to the source material.
+6. Put any unverifiable or incomplete suggestions in rewrite_notes as candidate confirmation items.
+
+Constraints:
+- No invented claims, metrics, tools, systems, scope, certifications, leadership, products, or outcomes.
+- No vague business fluff or copywriter language.
+- Prefer concise, recruiter-credible engineering phrasing.
+- Keep outputs grounded in the provided intake, audit, extracted text, and deterministic draft.
+- Do not include markdown fences.
+
+Return strict JSON with exactly these top-level keys:
+{
+  "positioning_summary": "",
+  "summary": "",
+  "skills_section": [],
+  "experience_sections": [
+    {
+      "title": "",
+      "bullets": []
+    }
+  ],
+  "rewrite_notes": []
+}
+
+Rules for fields:
+- positioning_summary: 1-2 sentences describing the strongest recruiter-facing positioning
+- summary: concise rewritten professional summary
+- skills_section: array of short strings
+- experience_sections: array of section objects with title and bullets only
+- rewrite_notes: array of short strings for reviewer guidance or candidate-confirmation items

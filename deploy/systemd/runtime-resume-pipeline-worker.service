@@ -1,0 +1,14 @@
+[Unit]
+Description=RunTime Resume Pipeline Worker
+After=network.target runtime-resume-pipeline-api.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/lanceharvie/runtime-scripts/runtime-resume
+Environment=PYTHON_BIN=/home/lanceharvie/qdrant-env/bin/python
+ExecStart=/home/lanceharvie/runtime-scripts/runtime-resume/scripts/run_pipeline_worker.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

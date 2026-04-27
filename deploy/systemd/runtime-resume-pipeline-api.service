@@ -1,0 +1,16 @@
+[Unit]
+Description=RunTime Resume Pipeline API
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/lanceharvie/runtime-scripts/runtime-resume
+Environment=PYTHON_BIN=/home/lanceharvie/qdrant-env/bin/python
+Environment=PIPELINE_API_HOST=127.0.0.1
+Environment=PIPELINE_API_PORT=8100
+ExecStart=/home/lanceharvie/runtime-scripts/runtime-resume/scripts/run_pipeline_api.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

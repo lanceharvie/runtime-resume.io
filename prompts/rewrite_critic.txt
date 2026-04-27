@@ -1,0 +1,21 @@
+Critique this rewritten technical resume draft.
+
+Check for:
+- invented facts
+- inflated claims
+- vague or generic phrasing
+- weak niche specificity
+- ATS-breaking structure
+- poor relevance weighting
+- unnatural language
+- unsupported metrics
+- places needing candidate confirmation
+
+Return JSON:
+{
+  "pass": true,
+  "major_issues": [],
+  "minor_issues": [],
+  "line_edits": [],
+  "needs_confirmation": []
+}

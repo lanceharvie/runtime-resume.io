@@ -1,0 +1,17 @@
+{
+  "niche": "robotics",
+  "priority_terms": [
+    "robotics",
+    "ROS",
+    "ROS2",
+    "controls",
+    "kinematics",
+    "motion planning",
+    "sensor fusion",
+    "perception",
+    "embedded systems",
+    "real-time control",
+    "autonomy",
+    "actuators"
+  ]
+}

@@ -1,0 +1,30 @@
+Create a rewrite strategy for a technical engineering resume.
+
+Inputs:
+- Parsed resume JSON
+- Tier 1 audit JSON
+- Target roles
+- Target market
+- Seniority
+- Candidate concerns
+- Niche keyword library
+- Rewrite constraints
+
+Tasks:
+1. Define the candidate's target positioning.
+2. Decide what should be emphasized on page one.
+3. Decide what should be compressed, reordered, or de-emphasized.
+4. List required keywords/topics for this niche and market.
+5. Identify missing facts that block a stronger rewrite.
+6. Define tone and seniority posture for the rewrite.
+
+Return JSON:
+{
+  "positioning_summary": "",
+  "page_one_priorities": [],
+  "de_emphasize": [],
+  "required_keywords": [],
+  "clarification_requests": [],
+  "tone_guidance": [],
+  "section_order": []
+}

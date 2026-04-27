@@ -1,0 +1,21 @@
+{
+  "niche": "embedded_firmware",
+  "priority_terms": [
+    "embedded C",
+    "C++",
+    "bare-metal",
+    "RTOS",
+    "FreeRTOS",
+    "device drivers",
+    "ARM",
+    "STM32",
+    "I2C",
+    "SPI",
+    "UART",
+    "CAN",
+    "interrupts",
+    "bootloader",
+    "board bring-up",
+    "firmware validation"
+  ]
+}
