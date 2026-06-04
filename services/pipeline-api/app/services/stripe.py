@@ -1,4 +1,7 @@
+import hashlib
+import hmac
 import json
+import time
 from urllib.error import HTTPError
 from urllib.parse import urlencode
 from urllib.request import Request
@@ -57,6 +60,51 @@ class StripeService:
             payload = json.loads(error.read().decode("utf-8"))
             message = payload.get("error", {}).get("message") or "Stripe request failed"
             raise RuntimeError(message) from error
+
+    def create_checkout_session(self, payload: dict) -> dict:
+        return self._request("/checkout/sessions", payload)
+
+    def verify_webhook_signature(
+        self,
+        raw_body: bytes,
+        signature_header: str | None,
+        *,
+        tolerance_seconds: int = 300,
+    ) -> dict:
+        if not self.settings.stripe_webhook_secret:
+            raise ValueError("Stripe webhook secret is not configured")
+        if not signature_header:
+            raise ValueError("Stripe signature header is missing")
+
+        signature_parts: dict[str, list[str]] = {}
+        for part in signature_header.split(","):
+            key, separator, value = part.partition("=")
+            if separator:
+                signature_parts.setdefault(key, []).append(value)
+
+        timestamps = signature_parts.get("t") or []
+        signatures = signature_parts.get("v1") or []
+        if not timestamps or not signatures:
+            raise ValueError("Stripe signature header is malformed")
+
+        try:
+            timestamp = int(timestamps[0])
+        except ValueError as error:
+            raise ValueError("Stripe signature timestamp is invalid") from error
+
+        if abs(int(time.time()) - timestamp) > tolerance_seconds:
+            raise ValueError("Stripe signature timestamp is outside tolerance")
+
+        signed_payload = f"{timestamp}.".encode("utf-8") + raw_body
+        expected_signature = hmac.new(
+            self.settings.stripe_webhook_secret.encode("utf-8"),
+            signed_payload,
+            hashlib.sha256,
+        ).hexdigest()
+        if not any(hmac.compare_digest(expected_signature, signature) for signature in signatures):
+            raise ValueError("Stripe signature verification failed")
+
+        return json.loads(raw_body.decode("utf-8"))
 
     def create_promotion_code(
         self,
